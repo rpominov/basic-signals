@@ -17,28 +17,26 @@ It has following differences from streams:
 
 ## Signal API
 
-Signal is an object with two methods:
-
-```
-const currentValue = signal.get()
-
-const unobserve = signal.observe(observer)
-unobserve()
-```
+Signal is an object with two methods.
 
 ### `get`
 
-`get` method must return the current value of the signal.
+Must return the current value of the signal.
 
 ### `observe`
 
-`observe` accepts an `observer`, and must return an `unobserve` function.
-`observer` is a function which must be called with no arguments every time the current value changes.
+Accepts an `observer`, and must return an `unobserve` function. An `observer` is a function
+which must be called with no arguments every time the current value changes.
 After `unobserve` was called, `observer` must not be called.
 
 ```js
 console.log('Current value is:', signal.get())
-signal.observe(() => {
+
+const unobserve = signal.observe(() => {
   console.log('Value has changed, the new value is:', signal.get())
 })
+
+...
+
+unobserve()
 ```
