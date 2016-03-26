@@ -23,7 +23,8 @@ Signal is an object with two methods.
 
 ### `get`
 
-Must return the current value of the signal.
+Must return the current value of the signal. Calling `get` must have no side effects,
+for instance it must not affect observers or change the current value.
 
 ### `observe`
 
