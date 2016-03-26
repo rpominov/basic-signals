@@ -5,10 +5,8 @@ The idea is to explore what kind of operations we can implement for a certain as
 And to find cases where that abstraction can be usable.
 
 Basic-streams project explores the "Stream" abstraction which is very similar to RxJS
-observables in the core idea, but with much simpler and limited API.
-
-Basic-signals focuses on a slightly different abstraction called "Signal".
-It has following differences from streams:
+observables in the core idea, but with much simpler and limited API. While basic-signals focuses on
+a slightly different abstraction called "Signal" with the following differences from streams:
 
  - Signals are not inert. When we create a _stream_ it does nothing until we subscribe to it,
    _signals_ on other hand are more like Promises, they "activate" immediately once created.
