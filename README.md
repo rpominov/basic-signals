@@ -29,7 +29,8 @@ Must return the current value of the signal.
 
 Accepts an `observer`, and must return an `unobserve` function. An `observer` is a function
 which must be called with no arguments every time the current value changes.
-After `unobserve` was called, `observer` must not be called.
+After `unobserve` was called, `observer` must not be called. Calling an `unobserve` second time
+must have no effect i.e., it must be idempotent.
 
 ```js
 console.log('Current value is:', signal.get())
