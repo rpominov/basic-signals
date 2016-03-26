@@ -11,11 +11,11 @@ Basic-signals focuses on a slightly different abstraction called "Signal".
 It has following differences from streams:
 
  - Signals are not inert. When we create a _stream_ it does nothing until we subscribe to it,
-   _signals_ on other hand are more like Promises, they "activate" immediately once created,
-   and adding or removing an observer should not affect any other observers in any way.
- - Signals have a current value, which is always available without subscribing,
+   _signals_ on other hand are more like Promises, they "activate" immediately once created.
+   Adding or removing an observer should not affect any other observers in any way.
+ - Each signal have a current value, which is always available without observing,
    and must always be up to date even if there are no observers.
-   Adding an observer should not change the current value.
+   Adding or removing an observer should not affect the current value.
 
 ## Signal API
 
