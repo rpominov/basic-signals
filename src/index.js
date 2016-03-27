@@ -1,4 +1,6 @@
-const Signal = {
+import {fromIncomplete} from 'static-land'
+
+const Signal = fromIncomplete({
 
   // creates an arbitrary signal
   create(producer, initialValue) {
@@ -79,7 +81,7 @@ const Signal = {
         }
         disposePrev = Signal.react(sink, fn(x))
       }, signal)
-    })
+    }, null)
   },
 
 
@@ -91,7 +93,7 @@ const Signal = {
       update()
       ofFn.observe(update)
       ofValue.observe(update)
-    })
+    }, null)
   },
 
 
@@ -102,10 +104,10 @@ const Signal = {
         prev = reducer(prev, next)
         sink(prev)
       }, signal)
-    })
+    }, null)
   },
 
 
-}
+})
 
 export default Signal

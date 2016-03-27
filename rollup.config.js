@@ -5,7 +5,7 @@ import nodeResolve from 'rollup-plugin-node-resolve'
 export default {
   entry: 'src/index.js',
   dest: 'umd/basicSignals.js',
-  plugins: [ nodeResolve(), commonjs(), babel() ],
+  plugins: [ nodeResolve({jsnext: true}), commonjs(), babel() ],
   format: 'umd',
   moduleName: 'BasicSignals',
 }
