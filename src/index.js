@@ -1,4 +1,4 @@
-export default const Signal = {
+const Signal = {
 
   // creates an arbitrary signal
   create(producer, initialValue) {
@@ -30,7 +30,7 @@ export default const Signal = {
             observers = observers.slice(0, index).concat(observers.slice(index + 1, observers.length))
           }
         }
-      }
+      },
     }
 
   },
@@ -51,7 +51,7 @@ export default const Signal = {
       get() {
         return x
       },
-      observe() {}
+      observe() {},
     }
   },
 
@@ -64,7 +64,7 @@ export default const Signal = {
       },
       observe(observer) {
         return signal.observe(observer)
-      }
+      },
     }
   },
 
@@ -78,7 +78,7 @@ export default const Signal = {
           disposePrev()
         }
         disposePrev = Signal.react(sink, fn(x))
-      })
+      }, signal)
     })
   },
 
@@ -101,9 +101,11 @@ export default const Signal = {
       Signal.react(next => {
         prev = reducer(prev, next)
         sink(prev)
-      })
+      }, signal)
     })
   },
 
 
 }
+
+export default Signal
