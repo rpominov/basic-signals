@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "lobot": "lobot",
-    "test": "eslint . && lobot test",
+    "test": "eslint . && lobot test"
   },
   "keywords": [],
   "author": "Roman Pominov <rpominov@gmail.com>",
