@@ -9,13 +9,7 @@
   ],
   "scripts": {
     "lobot": "lobot",
-    "build": "lobot build",
-    "coverage": "lobot test coverage",
-    "coveralls": "lobot test coveralls",
-    "testc": "lobot test watch",
     "test": "eslint . && lobot test",
-    "repl": "lobot repl",
-    "ship": "lobot release"
   },
   "keywords": [],
   "author": "Roman Pominov <rpominov@gmail.com>",
