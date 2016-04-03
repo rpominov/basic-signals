@@ -2,6 +2,7 @@
   "version": "0.1.1",
   "description": "Experimental very basic reactive signals for JavaScript",
   "main": "lib/index.js",
+  "jsnext:main": "lib-es/index.js",
   "files": [
     "lib",
     "lib-es",
